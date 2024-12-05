@@ -166,7 +166,7 @@ class _ConversationState extends State<Conversation> {
               return Container(
                 padding: const EdgeInsets.only(top: 100),
                 child: Center(
-                  child: Text(TIM_t("暂无会话")),
+                  child: Text(TIM_t("暂无会话555")),
                 ),
               );
             },

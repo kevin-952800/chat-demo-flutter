@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:tencent_cloud_chat_demo/src/pages/cross_platform/wide_screen/home_page.dart';
 import 'package:tencent_cloud_chat_demo/src/pages/home_page.dart';
 import 'package:tencent_cloud_chat_demo/src/pages/login.dart';
+import 'package:tencent_cloud_chat_demo/src/pages/login/login_screen.dart';
 import 'package:tencent_cloud_chat_demo/src/provider/custom_sticker_package.dart';
 import 'package:tencent_cloud_chat_demo/src/provider/theme.dart';
 import 'package:tencent_cloud_chat_demo/utils/constant.dart';
@@ -57,7 +58,7 @@ class InitStep {
             Animation secondaryAnimation) {
           return FadeTransition(
             opacity: animation,
-            child: LoginPage(initIMSDK: initIMSDKAndAddIMListeners),
+            child: const LoginScreen(),
           );
         },
       ),

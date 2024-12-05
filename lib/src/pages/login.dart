@@ -307,7 +307,7 @@ class _LoginFormState extends State<LoginForm> {
                       autofocus: false,
                       decoration: InputDecoration(
                         contentPadding: EdgeInsets.only(left: CommonUtils.adaptWidth(14)),
-                        hintText: TIM_t("请输入用户名"),
+                        hintText: TIM_t("请输入用户名111"),
                         hintStyle: TextStyle(fontSize: CommonUtils.adaptFontSize(32)),
                         //
                       ),
