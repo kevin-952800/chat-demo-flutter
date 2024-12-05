@@ -6,7 +6,6 @@ import 'package:tencent_cloud_chat_demo/src/create_group.dart';
 import 'package:tencent_cloud_chat_demo/src/provider/theme.dart';
 import 'package:tencent_cloud_chat_uikit/ui/utils/screen_utils.dart';
 import 'package:tencent_cloud_chat_uikit/ui/widgets/wide_popup.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class CreateGroupIntroduction extends StatefulWidget {
   final ValueChanged<V2TimConversation>? directToChat;

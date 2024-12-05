@@ -167,7 +167,7 @@ class SettingsState extends State<Settings> {
       return Row(
         children: [
           Checkbox(
-              fillColor: MaterialStateProperty.all(theme.primaryColor),
+              fillColor: WidgetStateProperty.all(theme.primaryColor),
               value: value,
               onChanged: (bool? newItem) {
                 onChange(newItem ?? false);

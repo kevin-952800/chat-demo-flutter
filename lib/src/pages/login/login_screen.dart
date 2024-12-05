@@ -6,7 +6,6 @@ import 'package:tencent_cloud_chat_demo/src/routes.dart';
 import 'dialog_builders.dart';
 import 'login_functions.dart';
 
-
 /// Example login screen
 class LoginScreen extends StatefulWidget {
   /// Simulates the multilanguage, you will implement your own logic.
@@ -69,7 +68,7 @@ class _LoginScreenState extends State<LoginScreen> {
     if (_operation?.isCompleted == true) {
       DialogBuilder(context).showResultDialog(res ?? 'Successful.');
 
-      Future.delayed(Duration(seconds: 2), () {
+      Future.delayed(const Duration(seconds: 2), () {
         Routes().directToHomePage();
       });
     }
@@ -169,8 +168,6 @@ class _LoginScreenState extends State<LoginScreen> {
   String get _welcome => language.code == 'TR' ? 'Kullanıcı Adı' : 'Welcome';
 
   String get _desc => language.code == 'TR' ? 'Kullanıcı Adı' : 'Desc';
-
-
 }
 
 /// Example forgot password screen

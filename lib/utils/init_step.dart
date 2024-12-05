@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:tencent_cloud_chat_demo/src/pages/cross_platform/wide_screen/home_page.dart';
 import 'package:tencent_cloud_chat_demo/src/pages/home_page.dart';
-import 'package:tencent_cloud_chat_demo/src/pages/login.dart';
 import 'package:tencent_cloud_chat_demo/src/pages/login/login_screen.dart';
 import 'package:tencent_cloud_chat_demo/src/provider/custom_sticker_package.dart';
 import 'package:tencent_cloud_chat_demo/src/provider/theme.dart';
@@ -18,7 +17,7 @@ class InitStep {
     Provider.of<DefaultThemeData>(context, listen: false).currentThemeType =
         themeType;
     Provider.of<DefaultThemeData>(context, listen: false).theme =
-    DefTheme.defaultTheme[themeType]!;
+        DefTheme.defaultTheme[themeType]!;
     _coreInstance.setTheme(theme: DefTheme.defaultTheme[themeType]!);
   }
 
@@ -35,7 +34,7 @@ class InitStep {
               .asMap()
               .keys
               .map((idx) =>
-              CustomSticker(index: idx, name: customEmojiPackage.list[idx]))
+                  CustomSticker(index: idx, name: customEmojiPackage.list[idx]))
               .toList(),
           menuItem: CustomSticker(
             index: 0,
@@ -47,10 +46,10 @@ class InitStep {
         .customStickerPackageList = customStickerPackageList;
   }
 
-  static void removeLocalSetting() async {
-  }
+  static void removeLocalSetting() async {}
 
-  static directToLogin(BuildContext context, [Function? initIMSDKAndAddIMListeners]) {
+  static directToLogin(BuildContext context,
+      [Function? initIMSDKAndAddIMListeners]) {
     Navigator.of(context).pushAndRemoveUntil(
       PageRouteBuilder(
         transitionDuration: const Duration(milliseconds: 500),
@@ -76,9 +75,8 @@ class InitStep {
               Animation secondaryAnimation) {
             return FadeTransition(
               opacity: animation,
-              child: isWideScreen
-                  ? const HomePageWideScreen()
-                  : const HomePage(),
+              child:
+                  isWideScreen ? const HomePageWideScreen() : const HomePage(),
             );
           },
           settings: const RouteSettings(name: '/homePage')),

@@ -2,7 +2,6 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:tencent_cloud_chat_demo/src/provider/login_user_Info.dart';
 import 'package:tencent_cloud_chat_uikit/tencent_cloud_chat_uikit.dart';
 
 import 'package:tencent_cloud_chat_demo/src/chat.dart';
@@ -154,10 +153,8 @@ class _CreateGroup extends State<CreateGroup> {
               context,
               MaterialPageRoute(
                   builder: (context) =>
-                    Chat(selectedConversation: conversation)
-              ),
-              ModalRoute.withName("/homePage")
-          );
+                      Chat(selectedConversation: conversation)),
+              ModalRoute.withName("/homePage"));
         }
       }
     }
@@ -166,17 +163,16 @@ class _CreateGroup extends State<CreateGroup> {
   _sendMessageToNewlyCreatedGroup(String groupType, String groupID) async {
     final loginUserInfo = _coreInstance.loginUserInfo;
     V2TimMsgCreateInfoResult? res = await _messageService.createCustomMessage(
-        data: json.encode(
-            {"businessID": "group_create",
-              "version": 4,
-              "opUser": loginUserInfo?.nickName ?? loginUserInfo!.userID,
-              "content": groupType == GroupType.Community ? "创建社群" : "创建群组",
-              "cmd": groupType == GroupType.Community ? 1 : 0}));
+        data: json.encode({
+      "businessID": "group_create",
+      "version": 4,
+      "opUser": loginUserInfo?.nickName ?? loginUserInfo!.userID,
+      "content": groupType == GroupType.Community ? "创建社群" : "创建群组",
+      "cmd": groupType == GroupType.Community ? 1 : 0
+    }));
     if (res != null) {
       final sendMsgRes = await _messageService.sendMessage(
-          id: res.id!,
-          groupID: groupID,
-          receiver: '');
+          id: res.id!, groupID: groupID, receiver: '');
     }
   }
 

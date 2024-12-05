@@ -1,7 +1,6 @@
 import 'dart:math';
 
 import 'package:adaptive_action_sheet/adaptive_action_sheet.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:tencent_cloud_chat_demo/src/pages/cross_platform/wide_screen/about_us.dart';
